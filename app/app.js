@@ -41,6 +41,9 @@ var io = require('socket.io').listen(httpServer)
     , sessionSockets = new SessionSockets(io, sessionStore, cookieParser)
     ;
 
+io.configure('production', function () {
+  io.set('log level', 0);
+});
 
 sessionSockets.on('connection', function (err, socket, session) {
 
