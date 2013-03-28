@@ -1,5 +1,5 @@
 var App = Em.Application.create()
-  , socket = io.connect();
+  , socket = io.connect('http://laberintoradio.net:3000');
 
 var Notifier = function (router) {
   var controller = router.controllerFor('userInfo');
