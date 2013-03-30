@@ -32,6 +32,10 @@ app.get('/', function (req, res) {
   res.render('index.jade');
 });
 
+app.get('/chat', function (req, res) {
+	res.redirect('/');		
+});
+
 
 var io = require('socket.io').listen(httpServer)
     , Message = require('../lib/message')
