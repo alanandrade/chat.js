@@ -1,5 +1,8 @@
-test:
+test: acceptance
 	@NODE_ENV=test ./node_modules/.bin/mocha
+
+acceptance:
+	@NODE_ENV=test ./node_modules/.bin/mocha-phantomjs test/pjs.html
 
 dev:
 	@NODE_ENV=development npm start

@@ -56,10 +56,10 @@ sessionSockets.on('connection', function (err, socket, session) {
 
     socket.on('user:update', function (attributes) {
       if (attributes.hasOwnProperty('name')) {
-        io.sockets.emit('users:change', user);
         Messenger.notice(socket, user.name + ' ahora se llama ' + attributes.name);
       }
       user.update(attributes);
+      io.sockets.emit('users:change', user);
     });
 
     socket.on('message:new', function (message) {

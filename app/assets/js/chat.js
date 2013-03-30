@@ -1,5 +1,6 @@
 var App = Em.Application.create()
-  , socket = io.connect('http://laberintoradio.net:3000');
+  //, socket = io.connect('http://laberintoradio.net:3000');
+  , socket = io.connect();
 
 var Notifier = function (router) {
   var controller = router.controllerFor('userInfo');
@@ -24,9 +25,9 @@ var Notifier = function (router) {
 };
 
 var scrollMessages = function () {
-  Ember.run.later(function () {
+  Ember.run.next(function () {
     $('#messages-feed').animate({scrollTop: $('#messages-feed')[0].scrollHeight});
-  }, 100);
+  });
 };
 
 App.Router.reopen({

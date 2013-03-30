@@ -23,6 +23,8 @@
     "supertest": "0.5.x",
     "mocha": "1.8.x",
     "should": "1.2.x",
-    "socket.io-client": "0.9.2"
+    "chai": "1.5.x",
+    "socket.io-client": "0.9.2",
+    "mocha-phantomjs": "2.0.x"
   }
 }
